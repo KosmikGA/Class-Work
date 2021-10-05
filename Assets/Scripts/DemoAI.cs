@@ -31,7 +31,7 @@ public class DemoAI : MonoBehaviour
         //Vector3 direction = new Vector3(Mathf.Sin(Time.time), 0, 1);
         //agent.Move(direction * Time.deltaTime * 5);
 
-        Vector3 dir = player.transform.position - transform.position;
+        Vector3 dir = transform.position - player.transform.position;
 
 
         RaycastHit hit;
@@ -40,7 +40,9 @@ public class DemoAI : MonoBehaviour
         {
             hitTarget = hit.transform.gameObject;
         }
-        agent.SetDestination(hitTarget.transform.position);
+
+        agent.SetDestination(player.transform.position);
 
     }
 }  
+
